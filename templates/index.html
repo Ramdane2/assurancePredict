@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V4</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="/static/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+<!--===============================================================================================-->
+<style>
+	.resultat
+		{
+			background-color: white;
+			border-left: 2px solid rgba(255,0,0,0.34);
+			font-size : 15px;
+			color : blue;
+		}
+	
+	.dataResult
+		{
+			padding-left : 5px;
+	
+
+</style>
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" action="https://assuranceprediction.herokuapp.com/predict" method="post">
+				<span class="contact100-form-title">
+					Prediction coût assurance
+				</span>
+				
+				<span class="label-input200">Fumeur ?</span>
+				<div>
+				  <input type="radio" id="non" name="smoker" value="0"
+						 checked>
+				  <label for="non">Non</label>
+				  <input type="radio" id="oui" name="smoker" value="1">
+				  <label for="oui">Oui</label>
+				</div>
+				<br/>
+				<div class="wrap-input200 validate-input">
+					<span class="label-input200">Age (ans)</span>
+					<input class="input100" type="number" min="18" name="age" placeholder="Entrez votre age " required>
+					<span class="focus-input100"></span>
+				</div>
+				<br/>
+
+				<div class="wrap-input200 validate-input">
+					<span class="label-input200">Taille (cm) </span>
+					<input class="input100" type="number" min="120" name="size" placeholder="Entrez votre taille " required>
+					<span class="focus-input100"></span>
+				</div>
+				<br/>
+				
+
+				<div class="wrap-input200 validate-input">
+					<span class="label-input200">Poids (kg) </span>
+					<input class="input100" type="number" min="30" name="weight" placeholder="Entrez votre poids " required>
+					<span class="focus-input100"></span>
+				</div>
+				<br/>
+				
+				
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							<span>
+								Submit
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+			</form>
+			<br/>
+			<br/>
+			Resultat :
+			<div class="resultat">
+				<span class="dataResult"> {{ prediction_text }}</span>
+			</div>
+			
+		</div>
+		
+		
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
