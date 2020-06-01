@@ -8,6 +8,7 @@ le but est d’entraîner un algorithme d'apprentissage pour qu'il puissent déd
 
 Le fichier data à été récupérer sur ce [lien](https://www.kaggle.com/mirichoi0218/insurance).
 Ce fichier comporte 7 colonnes et 1338 lignes *(au passage 1338 lignes c'est très léger ce qui vas impacter la précision par la suite)*
+
 ![dataset](/images/dataset.png)
 ### Préparation de la données
 Je rappel que nous cherchons le coût que l'assurance va facturée à ces client
@@ -34,7 +35,7 @@ Ma méthode à était de faire une matrice de corrélation, mais pour cela j'ai 
     matrice_corr = assurance.corr()
     sns.heatmap(data=matrice_corr, annot=True)
     
-    ![GitHub Logo](/images/matrice.png)
+![GitHub Logo](/images/matrice.png)
    Nous pouvons constater que les colonnes smoker , age et bmi (Body Mass Index) on le plus grand indice de corrélation avec notre objectif qui de déduire la **charges**
    Je vais partir sur la prédiction en fonction de ces trois critères
 
