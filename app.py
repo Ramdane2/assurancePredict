@@ -64,7 +64,7 @@ def predict():
 
 @app.route('/')
 def index():
-	return render_template('index.html', prediction_text='Saisir le formulaire pour avoir une prédiction')
+	return render_template('index.html', prediction_text='Compléter le formulaire pour avoir une prédiction')
 
 
 if __name__ == '__main__':
