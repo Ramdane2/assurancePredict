@@ -80,7 +80,7 @@ Cette ligne va permettre de générer le model utilisable directe sans passer pa
 
 ## Installation 
 
-Pour l'installation rien de plus simple, il suffit de récupérer le 
+Pour l'installation rien de plus simple, il suffit de récupérer le projet :
 
     git clone https://github.com/Ramdane2/assurancePredict.git
     cd assurancePredict
