@@ -1,4 +1,4 @@
-# Prédiction de la somme qu'une assurance va réserver pour un client en fonction de certains critères
+# Prédiction du coût annuel de l'assurance
 
 # Objectif
 l'objectif de ce travail est de déduire quelque somme une assurance vas facturer pour chaque clients.
@@ -9,6 +9,7 @@ le but est d’entraîner un algorithme d'apprentissage pour qu'il puissent déd
 Le fichier data à été récupérer sur ce [lien](https://www.kaggle.com/mirichoi0218/insurance).
 Ce fichier comporte 7 colonnes et 1338 lignes *(au passage 1338 lignes c'est très léger ce qui vas impacter la précision par la suite)*
 
+![dataset](/images/dataset.png)
 ### Préparation de la données
 Je rappel que nous cherchons le coût que l'assurance va facturée à ces client
 d’après notre fichier de données cette info ce situe dans la colonne **charges**
@@ -33,6 +34,8 @@ Ma méthode à était de faire une matrice de corrélation, mais pour cela j'ai 
 
     matrice_corr = assurance.corr()
     sns.heatmap(data=matrice_corr, annot=True)
+    
+![GitHub Logo](/images/matrice.png)
    Nous pouvons constater que les colonnes smoker , age et bmi (Body Mass Index) on le plus grand indice de corrélation avec notre objectif qui de déduire la **charges**
    Je vais partir sur la prédiction en fonction de ces trois critères
 
@@ -100,7 +103,13 @@ Pour lancer le programme, il suffit de l'éxecuté **app.py**
 Maintenant le serveur est prés, pour y'accéder il faut saisir sur internet **http://addresseVM:5000**
 Il faut bien vérifier que le **port 5000** est ouvert pour permettre l’accès depuis internet au serveur Flask
 
-Pour m'as part j'ai déployé l'application sur la plateforme Heroku disponible de puis ce [lien](https://assuranceprediction.herokuapp.com/)
+Pour m'as part j'ai déployé l'application sur la plateforme Heroku disponible de puis ce [lien](https://predictionassurance.herokuapp.com/)
+
+### Fonctionnalités
+J'ai crée deux fonctions : 
+- **learning** qui permet de r'entaîner l'algorithme et qui génére un nouveau model.pkl
+- **predict** qui permet de prédire le prix de l'assurance en fonction des paramètres (fumeur, age , bmi (taille / (poids * poids)))
+
 
 
 
