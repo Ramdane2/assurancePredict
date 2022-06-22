@@ -4,7 +4,7 @@ jsonpatch==1.16
 jsonpointer==1.10
 jsonschema==2.6.0
 matplotlib==3.2.1
-numpy==1.18.4
+numpy==1.22.0
 pandas==1.0.4
 pyasn1==0.4.2
 pyasn1-modules==0.2.1
